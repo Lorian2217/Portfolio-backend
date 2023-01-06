@@ -4,6 +4,7 @@ header('Access-Control-Allow-Methods: *');
 header('Access-Control-Allow-Headers: *');
 
 use App\Http\Controllers\ServerController;
+use App\Http\Controllers\upload;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Routing\Router;
 
@@ -29,3 +30,5 @@ Route::get('/example', function () {
 Route::post('/test', [ServerController::class, 'Registr']);
 
 Route::post('/auth', [ServerController::class, 'teach']);
+
+Route::post('/upload', [upload::class, 'handle']);
