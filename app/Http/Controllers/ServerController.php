@@ -32,9 +32,12 @@ class ServerController extends Controller
         }
 
         $user = new User();
+        $user->username = ' ';
         $user->Login = $request->login;
         $user->Password = Hash::make($request->password);
-        $user->username = ' ';
+        $user->grade = ' ';
+        $user->qualification = ' ';
+        $user->access = 1;
         $user->save();
 
         return response()->json([ 'success' => true, 'user'=>$user ]);

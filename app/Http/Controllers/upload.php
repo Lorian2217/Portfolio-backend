@@ -17,6 +17,8 @@ class upload extends Controller
         $validator = Validator::make($request->all(), [
             'image' => 'image|nullable',
             'image' => 'mimetypes:image/jpeg,image/png',
+        ], [
+            'image.mimetypes' => 'Загружаемое изображение может быть лишь формата jpeg или png'
         ]);
 
         if ($validator->fails()) {
